@@ -57,5 +57,5 @@ Do not deploy this tool on any machine without explicit authorization.
 --Author--
 Intern: Munnanuru Shashivanthu
 Email: vj08655@gmail.com
-Internship: Elevate Labs Cyber Security Intern  
+Internship: Elevate Labs Cyber Security Intern
 Project: Encrypted Keylogger with Exfiltration Simulation
