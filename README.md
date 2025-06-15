@@ -1,61 +1,82 @@
 TITLE : Keylogger with Encrypted Data Exfiltration
 
-Project Overview
-This project is a proof-of-concept keylogger built for educational purposes. It captures user keystrokes, encrypts them securely using the Fernet encryption scheme, stores them locally with timestamps, and simulates data exfiltration to a localhost-based listener. It also includes a startup persistence mechanism and a kill switch.
+ Project Overview:
+This project is a proofofconcept keylogger created for educational and ethical cybersecurity learning. It demonstrates how keylogging, encryption, and simulated data exfiltration techniques work together. The tool captures keystrokes, encrypts them using Fernet symmetric encryption, and simulates data transmission to a remote server (localhost).
+
+Features:
+ - Captures all keyboard input
+ - Encrypts logs using Fernet (cryptography module)
+ - Timestamps each log entry
+ - Simulates exfiltration via localhost socket server
+ - Optional startup persistence (Windows only)
+ - ESC key acts as a kill switch
+
+Tools & Technologies:
+ Python 3
+ [pynput](https://pynput.readthedocs.io/en/latest/) for capturing keystrokes
+ [cryptography](https://cryptography.io/en/latest/) for Fernet encryption
+ Builtin socket, datetime, threading, os, and winreg modules
 
 
-Features
-- Keystroke logging using `pynput`
-- Fernet encryption of logs (`cryptography` module)
-- Timestamped storage in `encrypted_logs.txt`
-- Simulated data exfiltration using Python `socket`
-- Startup persistence for Windows (via `winreg`)
-- Kill switch: Press `ESC` to stop the keylogger
+Getting Started:
 
+ 1. Clone the Repository
+bash
+git clone https://github.com/yourusername/KeyloggerEncrypted.git
+cd KeyloggerEncrypted
 
-How to Run
+ 2. Install Dependencies
 
-1. Start the Listener Server
+bash
+pip install pynput cryptography
+
+ 3. Start the Listener Server
+
+In one terminal:
+
 bash
 python server.py
 
-This will listen for logs on `localhost:9999`.
+ 4. Run the Keylogger
 
+In a separate terminal:
 
-2. Run the Keylogger
 bash
 python keylogger.py
 
-- Logs will be encrypted and saved locally.
-- Every few seconds, data is sent to `localhost`.
+Encrypted logs will be saved locally and sent to the server every few seconds.
+
+File Structure:
+
+KeyloggerEncrypted/
+├── keylogger.py                Main logger (capture, encrypt, send)
+├── server.py                   Simulated receiving server on localhost
+├── persistence.py              Adds keylogger to Windows startup
+├── key.key                     Fernet encryption key
+├── encrypted_logs.txt          Encrypted log storage
+├── README.md                   This file
+└── Keylogger_Project_Report.docx   Final internship report
 
 
-3. Add to Startup (Optional)
-For Windows users who want the logger to run on startup:
-bash
-python persistence.py
+Important Notes:
+
+ key.key is generated once and must be preserved to decrypt logs.
+ Do not run persistence on a production system — test only in a virtual machine or sandbox.
 
 
-Project Structure
+Ethical Disclaimer:
+
+This keylogger is developed strictly for educational purposes under a cybersecurity internship.
+Do not deploy or use this tool on systems without explicit written permission.
+Misuse of such tools may be illegal and unethical.
 
 
-Keylogger-Encrypted/
-├── keylogger.py
-├── server.py
-├── persistence.py
-├── key.key                Encryption key
-├── encrypted_logs.txt     Encrypted logs with timestamp
-├── Keylogger_Project_Report.docx
-└── README.md
+Author:
 
+Name: Munnanuru Shashivanthu
+Internship: Elevate Labs Cybersecurity Internship
+Project: Keylogger with Encrypted Data Exfiltration
 
-Ethical Notice
-This keylogger is created strictly for educational and ethical testing purposes.  
-Do not deploy this tool on any machine without explicit authorization.
+License:
 
-
---Author--
-Intern: Munnanuru Shashivanthu
-Email: vj08655@gmail.com
-Internship: Elevate Labs Cyber Security Intern
-Project: Encrypted Keylogger with Exfiltration Simulation
+This project is licensed for academic and ethical testing use only. All misuse is strictly discouraged.
