@@ -1,6 +1,6 @@
 TITLE : Keylogger with Encrypted Data Exfiltration
 
- Project Overview:
+Project Overview:
 This project is a proofofconcept keylogger created for educational and ethical cybersecurity learning. It demonstrates how keylogging, encryption, and simulated data exfiltration techniques work together. The tool captures keystrokes, encrypts them using Fernet symmetric encryption, and simulates data transmission to a remote server (localhost).
 
 Features:
@@ -49,14 +49,13 @@ Encrypted logs will be saved locally and sent to the server every few seconds.
 File Structure:
 
 KeyloggerEncrypted/
-├── keylogger.py                Main logger (capture, encrypt, send)
-├── server.py                   Simulated receiving server on localhost
-├── persistence.py              Adds keylogger to Windows startup
-├── key.key                     Fernet encryption key
-├── encrypted_logs.txt          Encrypted log storage
-├── README.md                   This file
-└── Keylogger_Project_Report.docx   Final internship report
-
+├── keylogger.py
+├── server.py 
+├── persistence.py
+├── key.key
+├── encrypted_logs.txt
+├── README.md
+└── Keylogger_Project_Report.docx
 
 Important Notes:
 
@@ -73,8 +72,9 @@ Misuse of such tools may be illegal and unethical.
 
 Author:
 
-Name: Munnanuru Shashivanthu
-Internship: Elevate Labs Cybersecurity Internship
+Name: Munnanuru Shashivanthu,
+Email: vj08655@gmail.com,
+Internship: Elevate Labs Cybersecurity Internship,
 Project: Keylogger with Encrypted Data Exfiltration
 
 License:
